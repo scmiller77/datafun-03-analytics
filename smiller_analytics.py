@@ -1,3 +1,5 @@
+'''Project 3 - pull and manipulate data from web'''
+
 import csv
 import pathlib 
 from pathlib import Path
@@ -13,7 +15,9 @@ import pandas as pd
 # Local module imports
 #import yourname_attr      
 from smiller_projsetup import create_folders_from_list
+import mass_tort_analytics
 
+#txt file section - fetch/write/process
 def fetch_and_write_txt_data(folder_name, filename, url):
     response = requests.get(url)
     if response.status_code == 200:
@@ -85,11 +89,16 @@ def process_csv_file(folder_name, filename, file_to):
         and picks a random employee to win a lottery'''
 
     file_path = Path(folder_name).joinpath(filename)
-    with file_path.open('r') as csvfile:
-        csv_content = csv.reader(csvfile)
-        employees = []
-        for row in csv_content:
-            employees.append(row)
+    try:    #Implement Try/Except
+        with file_path.open('r') as csvfile:
+            csv_content = csv.reader(csvfile)
+            employees = []
+            for row in csv_content:
+                employees.append(row)
+    except FileNotFoundError:
+        print(f"File not found: {file_path}")
+    except Exception as e:
+        print(f"Error reading CSV file: {e}")
     
     salary_column_index = 7
 
@@ -129,7 +138,7 @@ def write_excel_file(folder_name, filename, data):
         print(f"Excel data saved to {file_path}")
 
 def process_excel_file(folder_name, filename, file_to):
-    ''' Function to process excel file. It provides the % of people who are married, 
+    ''' Function to process an excel file. It provides the % of people who are married, 
         and the % of people who have purchased a bike. It also gives information about
         their ages.'''
 
@@ -187,9 +196,7 @@ def write_json_file(folder_name, filename, data):
         print(f"Text data saved to {file_path}")
 
 def process_json_file(folder_name, filename, file_to):
-    ''' Function to process excel file. It provides the % of people who are married, 
-        and the % of people who have purchased a bike. It also gives information about
-        their ages.'''
+    ''' Function to process a json file. It tells you the likes and dislikes of pets'''
     file_path = Path(folder_name).joinpath(filename)
     with open(file_path, 'r') as file:
         data = json.load(file)
@@ -214,6 +221,8 @@ def process_json_file(folder_name, filename, file_to):
     
 def main():
     ''' Main function to demonstrate module capabilities. '''
+
+    print(f"Byline: {mass_tort_analytics.byline}")
 
     txt_url = 'https://www.gutenberg.org/cache/epub/69087/pg69087-images.html'
     csv_url = 'https://gist.githubusercontent.com/kevin336/acbb2271e66c10a5b73aacf82ca82784/raw/e38afe62e088394d61ed30884dd50a6826eee0a8/employees.csv'

@@ -3,6 +3,6 @@ This csv file shows data for 50 employees.
 The employees are paid a total of $309116 each month, averaging to $6182.32 per person.
     
 
-The winner of the random lottery amongst the employees is Jose Manuel Urman!    
+The winner of the random lottery amongst the employees is James Marlow!    
 Visit HR to collect your prize!
     
