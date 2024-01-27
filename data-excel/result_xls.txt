@@ -1,0 +1,8 @@
+This Excel file shows data for 1026 individuals.
+
+Their ages range from 25 to 89, with an average age of 44.
+
+Of these people, 53.51% are married and 48.25% have purchased a bike. 
+
+From this data, it's more likely to find someone who is married than someone who has purchased a bike!
+    

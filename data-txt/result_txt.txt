@@ -1,0 +1,4 @@
+The number of words in this book is 73628.
+There are 11283 unique words in this book. 
+The 9001st word is "me".
+The most repeated word in the book is "the". Go figure...

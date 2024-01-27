@@ -1,0 +1,4 @@
+This json file tells us the following information:
+Whiskers is a cat that likes celery, strawberries and dislikes carrots.
+Woof is a dog that likes dog food and dislikes cat food.
+Fluffy is a cat that likes canned food and dislikes dry food.
